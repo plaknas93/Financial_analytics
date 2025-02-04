@@ -4,9 +4,12 @@
 ##Check Github
 ### Terminal >> which git
 ### if not go to "https://gitforwindows.org/"
-### Next install the pacahe "library(usethis)" in R.
+### Next install the package "library(usethis)" in R.
 ### Use the code: use_git_config(user.name = "Jane Doe", user.email = "jane@example.org") 
 ### Takes care of Project and Directory
+
+library(usethis)
+use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
 
 ##Practice operations
 2+2
@@ -40,6 +43,8 @@ getwd()
 #### Types of Operator: 1)Arithmetic Operators: + - / * () Require two operands
 2+2
 1-1
+(((10+2)-2)/5)^2
+
 a=3
 a
 b=9
@@ -52,18 +57,25 @@ a-b
 b^a
 4^2
 4^2/2^2
-log(100)
-log(100,10)
-?log
 
+log(100,10)
+log(100)
 
 #### Types of Operator: 2)Relational Operators: == > < >= <= != operations
+x=9
+y=5
+x==y
+x>y
+x<=y
+x!=y
 5==5
-4==5
+
 a=(5==5)
 a
+
 F*50
 T*50
+
 5>2
 5!=7
 5>=3
@@ -79,7 +91,6 @@ F&F
 T|T
 T|F
 F|F
-
 T&F|F
 
 ###Summary: Learned Arithmetic, Relational & Logical Operators in R
@@ -92,8 +103,10 @@ V
 head(V)
 tail(V)
 
-V1=5:13
+V1=5:100
 V1
+head(V1)
+tail(V1)
 
 V2=4.8:9.6
 V2
@@ -112,9 +125,8 @@ V[6]
 V[1:5]
 V[6:10]
 V
-V[-2]
+V[-2] #Deleting 2nd number
 V[-(2:5)]
-V[-c(1,2)]
 
 
 #### Vector Arithmetic
@@ -129,13 +141,15 @@ V1 = c(1,2,3,4)
 V3 = c(5,6)
 V1+V3
 V3+V1
+V=c("M","F")
+V
 
 ### Vector element sorting
 V = c(10,17,25,4,6,9,14)
 sort(V)
 sort(V, decreasing = T)
 
-c=c("red","blue","violet","yellow")
+c=c("red","yellow","blue","pink","black","lavender","orange")
 c
 sort(c)
 
