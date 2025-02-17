@@ -44,7 +44,7 @@ getwd()
 2+2
 1-1
 (((10+2)-2)/5)^2
-
+5%%3
 a=3
 a
 b=9
@@ -127,6 +127,7 @@ V[6:10]
 V
 V[-2] #Deleting 2nd number
 V[-(2:5)]
+x=TRUE
 
 
 #### Vector Arithmetic
@@ -152,7 +153,18 @@ sort(V, decreasing = T)
 c=c("red","yellow","blue","pink","black","lavender","orange")
 c
 sort(c)
+str(c)
 
+x=c("Male",1)
+x
+y=matrix(x,nrow=1,ncol=2)
+class(x)
+class(y)
+z=as.list(x)
+z
+class(list)
+x=1.0
+class(x)
 
 ## Data Types and Data Structures in R
 ### Data Types: Numeric, Character, Integer, Factor and Logical
@@ -181,8 +193,14 @@ z=x<y
 z
 class(z)
 
-d=c("Welcome","to","R","class")
+d=c("Welcome",2,"R","class")
 d
+class(d)
+d[2]
+class(d[2])
+
+d=c(1,2,3,"class")
+d=c(1,2,3)
 class(d)
 
 e=1:10  
@@ -195,6 +213,25 @@ V1=as.factor(V)
 V1
 class(V1)
 
+bonds=c("investment grade","junk bonds","masala bonds","eurodollar bonds","inflation protected bonds","inflation protected bonds")
+class(bonds)
+bonds_2=as.factor(bonds)
+bonds_2
+class(bonds_2)
+
+company=c("RIL", "ITC", "SBI", "Ashok Leyland","Inox","Zuari","Uttam Sugar")
+mcap_type=c("large","large","large","mid","mid","small","small")
+class(mcap_type)
+
+mcap_type2=as.factor(mcap_type)
+  
+data=data.frame(company,mcap_type,mcap_type2)
+data
+View(data)
+
+
+
+
 ## User defined functions in R
 scores_fa=c(4,12,45,24,15,35,42)
 mean(scores_fa)
@@ -205,7 +242,10 @@ sd(scores_fa)
 ##Importing CSV file in R
 data=read.csv(file="D:/RWorks/Financial_analytics/Data/scores_fin_ac.csv")
 data
+head(data)
+
 class(data)
+
 V=data$score
 class(V)
 
@@ -219,4 +259,5 @@ hist(V)
 hist(V, col="lavender")
 
 library(ggplot2)
-ggplot(data = data,aes(x=score))+geom_bar(fill="cornflower blue",col="black")+ggtitle("Distribution of Financial Accounting Scores: Fall Semester")+xlab("Scores (out of 100")+ylab("Frequency")
+ggplot(data = data,aes(x=score))+geom_bar(fill="magenta",col="black")+ggtitle("Distribution of Financial Accounting Scores: Fall Semester")+xlab("Scores (out of 100")+ylab("Frequency")
+
