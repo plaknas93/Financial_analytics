@@ -1,0 +1,51 @@
+Country,WTO_Status,Per_Capita_GDP,Trade_Deficit,Moodys_Rating,Economic_Outlook
+United States,Member,80000,-950,Aaa,Stable
+China,Member,12000,420,A1,Positive
+India,Member,2500,-250,Baa3,Positive
+Germany,Member,50000,300,Aaa,Stable
+United Kingdom,Member,45000,-200,Aa3,Negative
+France,Member,42000,-120,Aa2,Stable
+Japan,Member,40000,100,A1,Stable
+Brazil,Member,9000,-60,Ba2,Negative
+Canada,Member,52000,-50,Aaa,Stable
+Russia,Member,14000,250,Caa3,Negative
+Australia,Member,60000,80,Aaa,Stable
+South Korea,Member,35000,50,Aa2,Stable
+Italy,Member,40000,-30,Baa3,Negative
+Mexico,Member,11000,-80,Baa2,Stable
+Indonesia,Member,5000,-20,Baa2,Positive
+Netherlands,Member,55000,100,Aaa,Stable
+Turkey,Member,10000,-50,B3,Negative
+Saudi Arabia,Member,27000,150,A1,Stable
+Spain,Member,39000,-40,Baa1,Stable
+Switzerland,Member,93000,120,Aaa,Stable
+South Africa,Member,7000,-40,Ba2,Negative
+Argentina,Member,10000,-30,Ca,Negative
+Sweden,Member,55000,90,Aaa,Stable
+Poland,Member,18000,-20,A2,Stable
+Belgium,Member,47000,60,Aa3,Stable
+Thailand,Member,7800,70,Baa1,Positive
+Vietnam,Member,4200,80,Ba2,Positive
+Austria,Member,52000,50,Aa1,Stable
+Norway,Member,89000,140,Aaa,Stable
+United Arab Emirates,Member,45000,100,Aa2,Stable
+Iran,Non-Member,5500,30,B3,Negative
+Egypt,Member,3500,-10,B3,Stable
+Malaysia,Member,11500,40,A3,Stable
+Singapore,Member,85000,250,Aaa,Stable
+Pakistan,Member,1600,-35,Caa1,Negative
+Philippines,Member,3500,-45,Baa2,Positive
+Chile,Member,15000,20,A2,Stable
+Colombia,Member,7000,-25,Baa2,Negative
+Bangladesh,Member,2500,-40,Ba3,Positive
+Israel,Member,55000,30,A1,Stable
+Denmark,Member,72000,110,Aaa,Stable
+Finland,Member,60000,50,Aa1,Stable
+Portugal,Member,27000,-20,Baa2,Stable
+Greece,Member,22000,-25,Ba1,Stable
+Ireland,Member,95000,100,Aaa,Stable
+New Zealand,Member,53000,-10,Aaa,Stable
+Czech Republic,Member,26000,10,Aa3,Stable
+Hungary,Member,22000,15,Baa2,Stable
+Romania,Member,15000,-5,Baa3,Stable
+Ukraine,Member,5000,-50,Caa3,Negative
