@@ -21,6 +21,7 @@ rownames(data)
 colnames(data)
 colnames(data)[4]
 colnames(data)[4]="score"
+colnames(data)
 colnames(data)[10]
 colnames(data)[10]="missed_class"
 colnames(data)
@@ -29,6 +30,10 @@ colnames(data)
 ##Cleaning the Dataframe
 x=c(0,NA,2,3,4,-0.5,0.2)
 x
+str(x)
+class(x)
+mean(x)
+sd(x)
 is.na(x)
 
 x>2 #compares each element of vector x with 2
@@ -50,18 +55,23 @@ print(na_rows) #prints row numbers
 data1=data
 data1[is.na(data)]=0 #setting NAs to 0
 sum(is.na(data1))
+data1$hwrte
+mean(data1$hwrte)
+mean(data$hwrte)
 
 ##Handling observations
-df=data.frame(a=c(NA,1,2),b=c("One",NA,"Three"))
+df=data.frame(roll_no=c(NA,1,2),score=c("One",NA,"Three"))
 df              
-subset(df,!is.na(a)) #removes a's rows which contain "NA"
-subset(df,!is.na(b)) #removes b's rows which contain "NA"
+subset(df,!is.na(roll_no)) #removes roll_no's rows which contain "NA"
+subset(df,!is.na(score)) #removes score's rows which contain "NA"
 subset(df,complete.cases(df))
 
 subset(data,complete.cases(data)) #remove all NA from data set and 
 data2=subset(data,complete.cases(data)) #store NA less subset into variable data2
 data2
 sum(is.na(data2))
+mean(data2$hwrte)
+mean(data1$hwrte)
 
 data3=na.omit(data) #simplest function to get rid of all NA
 sum(is.na(data3))
@@ -70,6 +80,7 @@ sum(is.na(data3))
 library(car)
 ?Freedman
 data=Freedman
+View(data)
 head(data)
 str(data)
 summary(data)
@@ -91,7 +102,6 @@ head(data_NA_rows)
 
 ## Dealing with outliers
 library(UsingR)
-library(stargazer)
 ?babies
 dim(babies)
 
