@@ -134,6 +134,8 @@ data[,2] #Prints the content of second colum
 data[2,2] #Prints content of cell 2,2
 data[2,3] #Prints content of cell 2,3
 data[,c(3,5)] #Prints all rows for columns 3 AND 5
+data[2,c(3,5)] #Prints 2nd row for columns 3 AND 5
+data[5,c(3:5)]
 data[c(2,5),] #Prints all columns for rows 2 AND 5
 data[c(2:5),] #Prints all columns for rows 2 to 5
 data[c(2:5),c(2:4)] #Prints all columns for rows 2 to 5 and columns from 2 to 4
@@ -141,29 +143,41 @@ data[c(2:5),c(2:4)] #Prints all columns for rows 2 to 5 and columns from 2 to 4
 ## Creation of new variable
 data=iris
 head(data)
+colnames(data)
 data$petal.ratio=data$Petal.Length/data$Petal.Width
+data$sepal.ratio=data[,1]/data[,2]
 head(data)
-
+data$sepal.ratio
 
 ## Extracting Observations
 data=iris
 ###Task: Extract observations where petal width >0.5 and species ==setosa
 
+data$Petal.Width>0.5 & data$Species=="setosa"
+
 data[data$Petal.Width>0.5 & data$Species=="setosa",]
 
+#Print every row where species is "versicolor"
+data[data$Species=="versicolor",]
+head(data[data$Species=="versicolor",])
+
 library(dplyr)
-data %>% filter(Petal.Width>0.5 & Species=="setosa")
+data %>% filter(Petal.Width>0.5 | Species=="setosa")
+data2=data %>% filter(Petal.Width>0.5 | Species=="setosa")
+head(data2)
+View(data2)
 
 #Summarizing the observations
 summary(iris)
-brief(iris)
 
-summarize(iris,Petal.Length.mean=mean(Petal.Length),Sepal.Length.mean=mean(Sepal.Length))
+
+mean(data$Sepal.Length)
+mean(data$Petal.Length)
 
 iris %>% summarize(Petal.Length.mean = mean(Petal.Length), Sepal.Length.mean=mean(Sepal.Length)) 
 
 #How to visualize data
-libray(car)
+library(car)
 
 data=Davis
 ?Davis

@@ -11,8 +11,6 @@ View(data)
 summary(data)
 sum(is.na(data))
 str(data)
-data$date=as.Date(data$date)
-str(data)
 
 ### Filtering data for TN only
 library(dplyr)
@@ -22,9 +20,21 @@ head(data %>% filter(state=="Tamil Nadu") %>% select(date,rate))
 data_TN=data %>% filter(state=="Tamil Nadu") %>% select(date,rate)
 head(data_TN)
 
+
 ### Plotting the data 
-plot(data_TN)
-plot(data_TN,type='l',col='cornflower blue',lwd=3,main="Time-series: Forthnightly Petrol Price Trend 2002 to 2020")
+plot(x=data_TN$date,y=data_TN$rate) ###Error why?
+
+#### Let's check the data type of each column in our dataset
+str(data_TN)
+
+#### Here face error because the data type for "date" is character
+#### We know that scatterplot can plot only two NUMBERS. Hence, we must change the nature of the "date" column from character to number. In this case, we'll change into date)
+data_TN$date=as.Date(data_TN$date)
+
+#Scatterplot
+plot(x=data_TN$date,y=data_TN$rate)
+
+plot(data_TN,type='l',col='cornflower blue',lwd=4,main="Time-series: Chennai Forthnightly Petrol Price Trend 2002 to 2020") #Aestically                            
 
 ## Visualization using bar plots
 
