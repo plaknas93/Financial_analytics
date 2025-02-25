@@ -44,6 +44,7 @@ head(data)
 View(data)
 summary(data)
 str(data)
+colnames(data)
 
 #### We notice that Moody's Ratings and Economic outlooks have been marked as "characters". However, these are factors
 
@@ -56,6 +57,8 @@ levels(data$Economic_Outlook)
 table(data$Economic_Outlook) #Returns the count of each level
 
 barplot(table(data$Economic_Outlook),main="Barplot")
+pie(table(data$Economic_Outlook),main="Piechart")
+
 barplot(table(data$Economic_Outlook),main="Barplot",horiz = T)
 barplot(table(data$Economic_Outlook),main="Barplot: 50 Countries Economic Outlook",col=rainbow(3),border="dark green",ylab="Frequency",xlab="Economic Outlook")
 
@@ -63,13 +66,17 @@ plot(data$Trade_Deficit,data$Per_Capita_GDP)
 cor(data$Trade_Deficit,data$Per_Capita_GDP)
 
 #Plotting trade deficit against GDP per capita
-ggplot(data=data,aes(x=Trade_Deficit,y=Per_Capita_GDP))+geom_point(size=2,shape=17)
+library(ggplot2)
+ggplot(data=data,aes(x=Trade_Deficit,y=Per_Capita_GDP))+geom_point(size=3,shape=17,col='#fa2205')
 
-ggplot(data=data,aes(x=data$Trade_Deficit,y=data$Per_Capita_GDP,colour =Country))+geom_point(size=2,shape=17)
+ggplot(data=data,aes(x=data$Trade_Deficit,y=data$Per_Capita_GDP,colour =Country))+geom_point(size=3,shape=17)
 
 ### We notice here that R is not able to recognize each data point as a seprate country. This is because we did NOT specify each data point as a seprate country
 
-data$Country=as.factor(data$Country)
-levels(data$Country)
+data2 = data %>% filter(Country=="India" | Country=="United States" | Country=="China" | Country=="Pakistan")
+data2
+head(data2)
 
-ggplot(data=data,aes(x=Trade_Deficit,y=Per_Capita_GDP,col = Country))+geom_point(size=2,shape=17)
+ggplot(data=data2,aes(x=Trade_Deficit,y=Per_Capita_GDP,colour = Country))+geom_point(size=2,shape=17)
+
+

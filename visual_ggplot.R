@@ -47,6 +47,11 @@ ggplot(data=data,aes(x=Economic_Outlook))+geom_bar()
 
 ggplot(data=data,aes(x=Economic_Outlook,fill=Economic_Outlook))+geom_bar()
 
+ggplot(data=data,aes(x=Economic_Outlook,fill=Economic_Outlook))+geom_bar()
+
+ggplot(data=data,aes(x=Economic_Outlook,fill=Economic_Outlook))+geom_bar()+coord_polar(theta = "y") + theme_void() + labs(title = "Economic outlook of countries in a Pie Chart ") +scale_fill_brewer(palette = "Set2")
+
+
 #Plotting Per Capita GDP vs Trade Deficit
 ggplot(data=data,aes(x=Trade_Deficit,y=Per_Capita_GDP))+geom_point()
 ggplot(data=data,aes(x=Trade_Deficit,y=Per_Capita_GDP))+geom_point(size=3,shape=15)
