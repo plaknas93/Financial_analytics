@@ -65,3 +65,11 @@ data %>% filter(Country=="India" | Country=="United States" | Country=="Australi
 data2=data %>% filter(Country=="India" | Country=="United States" | Country=="Australia" | Country=="China" | Country=="Germany" | Country=="Japan" | Country == "Pakistan")
 
 ggplot(data2,aes(x=Trade_Deficit,y=Per_Capita_GDP,colour=Country))+geom_point(size=3,shape=15)
+
+
+ggplot(data=data,aes(Moodys_Rating))+geom_bar()
+       
+ggplot(data=data,aes(x=Trade_Deficit))+geom_histogram(fill='salmon',col="dark blue")+ggtitle("Histogram of Trade Deficit Distribution for 50 countries")+xlab("Trade Deficit in billion $")+ ylab("Frequency")
+
+
+       
