@@ -2,6 +2,8 @@
 #Multiple Linear Regression in R
 
 data=read.csv(file="D:/RWorks/Financial_analytics/Data/stock_returns.csv")
+colnames(data)
+summary(data$Market_Sentiment)
 
 ##Variable Information
 ##1 Stock_Returns (continuous variable, e.g., percentage returns of a stock).
@@ -38,6 +40,8 @@ cor(data$P_E_Ratio,data$E_P_Ratio)
 library(corrplot)
 m=cor(data)
 corrplot(m,method="number")
+corrplot(m,method="square")
+
 
 #Actual Model
 mod3=lm(data,formula= Stock_Returns~Market_Sentiment+Interest_Rate+Inflation_Rate+Trading_Volume,P_E_Ratio+Volatility)
@@ -51,3 +55,11 @@ vif(mod2)
 #Logistic Regression
 mod4=glm(data,formula= Analyst_Recom~Market_Sentiment+Interest_Rate+Inflation_Rate+Trading_Volume,P_E_Ratio+Volatility,family=binomial)
 summary(mod4)
+
+sales=c(10000,10,1000,250)
+rd=c(1800,2,5,25)
+
+data2=data.frame(rd,sales)
+
+mod5=lm(data2,formula=sales~rd)
+summary(mod5)
