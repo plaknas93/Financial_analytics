@@ -21,7 +21,7 @@ head(data)
 
 #round off all data points to two decimal places
 library(dplyr)
-#data = data %>% mutate(across(where(is.numeric), ~ round(., 2)))
+data = data %>% mutate(across(where(is.numeric), ~ round(., 2)))
 
 head(data)
 

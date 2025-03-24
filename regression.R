@@ -21,3 +21,17 @@ summary(mod1)
 library(ggpmisc)
 ggplot(data,aes(x=sensex_ret,y=itc_ret))+geom_point(size=3,shape=18,col='dark blue')+ggtitle("Scatterplot: ITC vs Sensex (Monthly return over last 12 months)")+xlab("Sensex returns %")+ylab("ITC returns %")+ geom_smooth(method = "lm")+stat_poly_line()+stat_poly_eq(use_label(c("eq", "R2")))
 
+
+#Regression based on more data points
+
+data2=read.csv(file="D:/RWorks/Financial_analytics/Data/CAPM.csv")
+
+head(data2)
+ggplot(data2,aes(x=sensex_ret,y=itc_ret))+geom_point(size=3,shape=18,col='dark blue')+ggtitle("Scatterplot: ITC vs Sensex (Monthly return over last 12 months)")+xlab("Sensex returns %")+ylab("ITC returns %")
+
+#Regression
+mod2=lm(data2,formula=itc_ret~sensex_ret)
+summary(mod2)
+
+library(ggpmisc)
+ggplot(data2,aes(x=sensex_ret,y=itc_ret))+geom_point(size=3,shape=18,col='dark blue')+ggtitle("Scatterplot: ITC vs Sensex (Monthly return over last 12 months)")+xlab("Sensex returns %")+ylab("ITC returns %")+ geom_smooth(method = "lm")+stat_poly_line()+stat_poly_eq(use_label(c("eq", "R2")))

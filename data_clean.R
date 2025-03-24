@@ -16,7 +16,6 @@ str(data)
 colnames(data)
 rownames(data)
 
-
 ##Changing names of columns
 colnames(data)
 colnames(data)[4]
