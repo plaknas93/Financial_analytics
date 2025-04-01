@@ -11,7 +11,7 @@ library(wordcloud)      # For generating word cloud
 library(RColorBrewer)   # For better color palettes
 
 # Step 1: Read the PDF file and extract text
-pdf_path = "D:/RWorks/Financial_analytics/Data/Economic_survey_2025.pdf"  
+pdf_path ="D:/RWorks/Financial_analytics/Data/Economic_survey_2025.pdf"  
 
 #Replace with the actual path of your PDF
 pdf_text_data = pdf_text(pdf_path)  # Extract text from the PDF
